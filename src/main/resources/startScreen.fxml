@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1150.0" style="-fx-background-image: url('/chessBackground.jpg');" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.gui.StartScreen">
+    <children>
+        <MenuBar prefHeight="36.0" prefWidth="1151.0" styleClass="menu" stylesheets="@CSS-Stylesheet.css">
+            <menus>
+                <Menu id="menuButton" fx:id="gameMenu" mnemonicParsing="false" style="-fx-text-alignment: center;" styleClass="menuButton" text="Game">
+                    <items>
+                        <MenuItem id="menuItem" fx:id="closeControl" mnemonicParsing="false" onAction="#close" text="Close" />
+                    </items>
+                </Menu>
+                <Menu id="menuButton" fx:id="language" mnemonicParsing="false" text="Language">
+                    <items>
+                        <MenuItem id="menuItem" fx:id="english" mnemonicParsing="false" onAction="#changeLanguage" text="English" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem id="menuItem" fx:id="german" mnemonicParsing="false" onAction="#changeLanguage" text="German" />
+                    </items>
+                </Menu>
+                <Menu id="menuButton" fx:id="help" mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem id="menuItem" fx:id="about" mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Text fx:id="selectGameModeText" fill="#b3b3b2" layoutX="26.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the Game-Mode:">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <ToggleButton id="toggleButtons" fx:id="togglePlayer" layoutX="24.0" layoutY="105.0" mnemonicParsing="false" onAction="#playerVsPlayer" prefHeight="38.0" prefWidth="100.0" selected="true" stylesheets="@CSS-Stylesheet.css" text="vs. Player">
+            <toggleGroup>
+                <ToggleGroup fx:id="toggleGroup1" />
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton id="toggleButtons" fx:id="toggleComputer" layoutX="162.0" layoutY="105.0" mnemonicParsing="false" onAction="#playerVsComputer" prefHeight="38.0" prefWidth="100.0" stylesheets="@CSS-Stylesheet.css" text="vs. A.I." toggleGroup="$toggleGroup1" />
+        <ToggleButton id="toggleButtons" fx:id="toggleNetwork" layoutX="296.0" layoutY="105.0" mnemonicParsing="false" onAction="#networkGame" prefHeight="38.0" prefWidth="100.0" stylesheets="@CSS-Stylesheet.css" text="Networkgame" toggleGroup="$toggleGroup1" />
+        <Pane fx:id="selectAiPane" layoutX="22.0" layoutY="153.0" prefHeight="92.0" prefWidth="277.0" visible="false">
+            <children>
+                <Text fx:id="selectAiText" fill="#b3b3b2" layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the A.I. :">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <ToggleButton id="toggleButtons" fx:id="buttonSimpleAi" layoutX="2.0" layoutY="49.0" mnemonicParsing="false" onAction="#toggleSimpleAi" prefHeight="38.0" prefWidth="100.0" selected="true" stylesheets="@CSS-Stylesheet.css" text="simple A.I.">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup2" />
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton id="toggleButtons" fx:id="buttonMinMaxAi" layoutX="140.0" layoutY="49.0" mnemonicParsing="false" onAction="#toggleMinMaxAi" prefHeight="38.0" prefWidth="100.0" stylesheets="@CSS-Stylesheet.css" text="minMax A.I." toggleGroup="$toggleGroup2" />
+            </children>
+        </Pane>
+        <Pane fx:id="selectAiDepthPane" layoutX="24.0" layoutY="245.0" prefHeight="92.0" prefWidth="390.0" visible="false">
+            <children>
+                <Text fx:id="selectAiDepthText" fill="#b3b3b2" layoutX="4.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the A.I. depth:">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Slider fx:id="depthSlider" blockIncrement="0.0" layoutX="4.0" layoutY="34.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" prefHeight="38.0" prefWidth="285.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@CSS-Stylesheet.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="colorPane" layoutX="26.0" layoutY="326.0" visible="false">
+            <children>
+                <RadioButton fx:id="radioWhiteButton" layoutX="7.0" layoutY="44.203125" mnemonicParsing="false" onAction="#radioWhite" selected="true" text="White" textFill="#b3b3b2">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup3" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="radioBlackButton" layoutX="8.0" layoutY="95.203125" mnemonicParsing="false" onAction="#radioBlack" text="Black" textFill="#b3b3b2" toggleGroup="$toggleGroup3">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </RadioButton>
+                <Text fx:id="chooseColorText" fill="#b3b3b2" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your color:" wrappingWidth="219.1194751875331">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Button id="startGameButton" fx:id="startGameButton" layoutX="24.0" layoutY="543.0" mnemonicParsing="false" onAction="#switchToGameScreen" prefHeight="63.0" prefWidth="374.0" styleClass="startGameButton" stylesheets="@CSS-Stylesheet.css" text="Start Game">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Button>
+        <Pane fx:id="networkGamePane" layoutX="6.0" layoutY="321.0" prefHeight="92.0" prefWidth="413.0" visible="false">
+            <children>
+                <ToggleButton id="toggleButtons" fx:id="serverToggle" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#server" prefHeight="38.0" prefWidth="100.0" selected="true" stylesheets="@CSS-Stylesheet.css" text="Server">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup23" />
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton id="toggleButtons" fx:id="clientToggle" layoutX="156.0" layoutY="14.0" mnemonicParsing="false" onAction="#client" prefHeight="38.0" prefWidth="100.0" stylesheets="@CSS-Stylesheet.css" text="Client" toggleGroup="$toggleGroup23" />
+            </children>
+        </Pane>
+        <Pane fx:id="iPAddressPane" layoutX="16.0" layoutY="413.0" prefHeight="123.0" prefWidth="413.0" visible="false">
+            <children>
+                <Text fx:id="enterNetworkText" fill="#b3b3b2" layoutX="9.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter address for Networkgame">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <TextField id="enterNetworkGame" fx:id="enterNetworkGame" layoutX="7.0" layoutY="56.0" prefHeight="36.0" prefWidth="324.0" promptText="Enter IP-Address" />
+            </children>
+        </Pane>
+        <Button id="toggleButtons" fx:id="loadGameButton" layoutX="26.0" layoutY="636.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="38.0" prefWidth="100.0" stylesheets="@CSS-Stylesheet.css" text="Load Game" />
+    </children>
+</AnchorPane>

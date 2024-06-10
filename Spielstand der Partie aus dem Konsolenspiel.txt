@@ -1,0 +1,7 @@
+K;0;0;1;
+k;4;4;1;
+p;5;1;1;
+p;6;3;0;
+White;GAME_RUNNING;false;5;1;p;true
+G
+[b4-b3]

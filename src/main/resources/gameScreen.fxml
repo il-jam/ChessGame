@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="gameScreenPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1150.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.gui.GameScreen">
+    <children>
+      <Pane fx:id="blackFrame" layoutX="170.0" layoutY="33.0" prefHeight="615.0" prefWidth="659.0" visible="false">
+         <children>
+            <Text fill="#779656" layoutX="9.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="7.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="8.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="8.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="9.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="8.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="9.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="9.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="65.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="140.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="g" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="210.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="f" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="280.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="355.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="430.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="498.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#779656" layoutX="573.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a" x="50.0" y="50.0">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+        <Pane fx:id="whiteFrame" layoutX="170.0" layoutY="33.0" prefHeight="615.0" prefWidth="615.0">
+            <children>
+                <Text fill="#779656" layoutX="9.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="7.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="8.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="8.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="9.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="8.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="9.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="9.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="65.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="140.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="210.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="280.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="355.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="430.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="f" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="498.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="g" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+                <Text fill="#779656" layoutX="573.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h" x="50.0" y="50.0">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="menuPane" layoutX="-157.0" prefHeight="770.0" prefWidth="210.0" style="-fx-background-color: #262522;">
+            <children>
+                <ToggleButton id="burgerButton" fx:id="burgerButton" layoutX="161.0" layoutY="32.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="36.0" prefWidth="45.0" stylesheets="@CSS-Stylesheet-GameScreen.css" />
+                <Text fx:id="menuText" fill="#8e8d8c" layoutX="2.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu" textAlignment="CENTER" wrappingWidth="168.19392013549805">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <MenuButton fx:id="gameButton" layoutY="95.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="170.0" style="-fx-background-color: #262522 #262522;" styleClass="menuButton" stylesheets="@CSS-Stylesheet-GameScreen.css" text="Game          " textFill="#b3b3b2">
+                    <items>
+                        <MenuItem fx:id="saveGameControl" mnemonicParsing="false" onAction="#saveGame" text="Save Game" />
+                        <MenuItem fx:id="returnStartScreen" mnemonicParsing="false" onAction="#switchToStartScreen" text="Return to Start Screen" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="closeControl" mnemonicParsing="false" onAction="#close" text=" Close" />
+                    </items>
+                    <font>
+                        <Font name="Arial" size="24.0" />
+                    </font>
+                </MenuButton>
+                <MenuButton fx:id="settings" layoutY="206.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="170.0" style="-fx-background-color: #262522;" styleClass="menuButton" stylesheets="@CSS-Stylesheet-GameScreen.css" text="Settings      " textFill="#b3b3b2">
+                    <items>
+                        <CheckMenuItem fx:id="possibleMoves" mnemonicParsing="false" selected="true" text="Show possible moves" />
+                        <CheckMenuItem fx:id="playerInCheck" mnemonicParsing="false" onAction="#showIfPlayerInCheck" selected="true" text="Show if player in check" />
+                        <CheckMenuItem fx:id="rotateBoard" mnemonicParsing="false" onAction="#rotationCorrection" selected="true" text="Rotate board after move" />
+                        <CheckMenuItem fx:id="changeSelection" mnemonicParsing="false" selected="true" text="Allow changing selection" />
+                    </items>
+                    <font>
+                        <Font name="Arial" size="24.0" />
+                    </font>
+                </MenuButton>
+                <MenuButton fx:id="language" layoutY="344.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="170.0" style="-fx-background-color: #262522;" styleClass="menuButton" stylesheets="@CSS-Stylesheet-GameScreen.css" text="Language  " textFill="#b3b3b2">
+                    <items>
+                        <MenuItem fx:id="english" mnemonicParsing="false" onAction="#changeLanguage" text="English" />
+                        <MenuItem fx:id="german" mnemonicParsing="false" onAction="#changeLanguage" text="German" />
+                    </items>
+                    <font>
+                        <Font name="Arial" size="24.0" />
+                    </font>
+                </MenuButton>
+            </children>
+        </Pane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="595.0" layoutX="250.0" layoutY="47.0" stroke="#f8f8f8" strokeType="INSIDE" strokeWidth="5.0" style="-fx-stroke: #262521;" width="595.0" />
+        <Pane layoutX="247.0" layoutY="44.0" prefHeight="600.0" prefWidth="600.0">
+            <children>
+                <GridPane fx:id="gridPane" alignment="CENTER" prefHeight="600.0" prefWidth="600.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <StackPane fx:id="00" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3;" />
+                        <StackPane fx:id="01" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="1" />
+                        <StackPane fx:id="02" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3;" GridPane.columnIndex="2" />
+                        <StackPane fx:id="03" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="3" />
+                        <StackPane fx:id="04" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3;" GridPane.columnIndex="4" />
+                        <StackPane fx:id="05" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="5" />
+                        <StackPane fx:id="06" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3;" GridPane.columnIndex="6" />
+                        <StackPane fx:id="07" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="7" />
+                        <StackPane fx:id="10" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.rowIndex="1" />
+                        <StackPane fx:id="11" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <StackPane fx:id="12" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <StackPane fx:id="13" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <StackPane fx:id="14" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <StackPane fx:id="15" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <StackPane fx:id="16" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <StackPane fx:id="17" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <StackPane fx:id="20" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.rowIndex="2" />
+                        <StackPane fx:id="21" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <StackPane fx:id="22" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <StackPane fx:id="23" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <StackPane fx:id="24" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <StackPane fx:id="25" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <StackPane fx:id="26" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <StackPane fx:id="27" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                        <StackPane fx:id="30" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.rowIndex="3" />
+                        <StackPane fx:id="31" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <StackPane fx:id="32" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <StackPane fx:id="33" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <StackPane fx:id="34" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <StackPane fx:id="35" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <StackPane fx:id="36" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <StackPane fx:id="37" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        <StackPane fx:id="40" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.rowIndex="4" />
+                        <StackPane fx:id="41" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <StackPane fx:id="42" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <StackPane fx:id="43" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <StackPane fx:id="44" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <StackPane fx:id="45" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <StackPane fx:id="46" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <StackPane fx:id="47" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        <StackPane fx:id="50" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.rowIndex="5" />
+                        <StackPane fx:id="51" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <StackPane fx:id="52" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <StackPane fx:id="53" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <StackPane fx:id="54" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <StackPane fx:id="55" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <StackPane fx:id="56" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <StackPane fx:id="57" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                        <StackPane fx:id="60" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.rowIndex="6" />
+                        <StackPane fx:id="61" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <StackPane fx:id="62" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <StackPane fx:id="63" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <StackPane fx:id="64" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <StackPane fx:id="65" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                        <StackPane fx:id="66" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                        <StackPane fx:id="67" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                        <StackPane fx:id="70" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.rowIndex="7" />
+                        <StackPane fx:id="71" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <StackPane fx:id="72" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <StackPane fx:id="73" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                        <StackPane fx:id="74" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                        <StackPane fx:id="75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                        <StackPane fx:id="76" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #779656#779656;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                        <StackPane fx:id="77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeed3#eeeed3;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </GridPane>
+            </children>
+        </Pane>
+        <Pane fx:id="blackPromotionPane" layoutX="226.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="630.0" visible="false">
+            <children>
+                <Pane layoutY="-8.0" prefHeight="600.0" prefWidth="630.0" style="-fx-background-color: #262522 #262522;">
+                    <children>
+                        <ToggleButton fx:id="bishopButtonB" layoutX="198.0" layoutY="311.0" mnemonicParsing="false" text="Bishop" />
+                        <ToggleButton fx:id="queenButtonB" layoutX="49.0" layoutY="311.0" mnemonicParsing="false" text="Queen" />
+                        <Text fx:id="blackPromotionTitle" fill="#b3b3b2" layoutX="225.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pawn Promotion">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="blackPromotionChooseText" fill="#b3b3b2" layoutX="175.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your chess piece:">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="91.0" fitWidth="91.0" layoutX="30.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@chess/blackQueen.png" />
+                            </image>
+                        </ImageView>
+                        <Pane fx:id="bishopWhitePromotion1" layoutX="196.0" layoutY="245.0" prefHeight="51.0" prefWidth="85.0">
+                            <children>
+                                <ImageView fitHeight="90.0" fitWidth="95.0" layoutX="-14.0" layoutY="-41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@chess/blackBishop.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="knightWhitePromotion1" layoutX="286.0" layoutY="191.0" prefHeight="92.0" prefWidth="93.0">
+                            <children>
+                                <ImageView fitHeight="90.0" fitWidth="98.0" layoutX="34.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@chess/blackKnight.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="rookWhitePromotion1" layoutX="415.0" layoutY="189.0" prefHeight="94.0" prefWidth="94.0" />
+                        <ImageView fitHeight="97.0" fitWidth="90.0" layoutX="468.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@chess/blackRook.png" />
+                            </image>
+                        </ImageView>
+                        <ToggleButton fx:id="knightButtonB" layoutX="342.0" layoutY="311.0" mnemonicParsing="false" text="Knight" />
+                        <ToggleButton fx:id="rookButtonB" layoutX="491.0" layoutY="311.0" mnemonicParsing="false" text="Rook" />
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane fx:id="whitePromotionPane" layoutX="226.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="630.0" visible="false">
+            <children>
+                <Pane layoutY="-8.0" prefHeight="600.0" prefWidth="630.0" style="-fx-background-color: #262522 #262522;">
+                    <children>
+                        <ToggleButton fx:id="bishopButton" layoutX="198.0" layoutY="311.0" mnemonicParsing="false" text="Bishop">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="toggleGroup1" />
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="queenButton" layoutX="49.0" layoutY="311.0" mnemonicParsing="false" text="Queen" toggleGroup="$toggleGroup1" />
+                        <Text fx:id="whitePromotionTitle" fill="#b3b3b2" layoutX="225.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pawn Promotion">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="whitePromotionChooseText" fill="#b3b3b2" layoutX="175.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your chess piece:">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="91.0" fitWidth="91.0" layoutX="30.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@whiteQueen2.png" />
+                            </image>
+                        </ImageView>
+                        <Pane fx:id="bishopWhitePromotion" layoutX="196.0" layoutY="245.0" prefHeight="51.0" prefWidth="85.0">
+                            <children>
+                                <ImageView fitHeight="90.0" fitWidth="95.0" layoutX="-14.0" layoutY="-41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@whiteBishop2.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="knightWhitePromotion" layoutX="286.0" layoutY="191.0" prefHeight="92.0" prefWidth="93.0">
+                            <children>
+                                <ImageView fitHeight="90.0" fitWidth="98.0" layoutX="34.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@whiteKnight2.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="rookWhitePromotion" layoutX="415.0" layoutY="189.0" prefHeight="94.0" prefWidth="94.0" />
+                        <ImageView fitHeight="97.0" fitWidth="90.0" layoutX="468.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@whiteRook2.png" />
+                            </image>
+                        </ImageView>
+                        <ToggleButton fx:id="knightButton" layoutX="342.0" layoutY="311.0" mnemonicParsing="false" text="Knight">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="toggleGroup11" />
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="rookButton" layoutX="491.0" layoutY="311.0" mnemonicParsing="false" text="Rook">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="toggleGroup111" />
+                            </toggleGroup>
+                        </ToggleButton>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane layoutX="242.0" layoutY="662.0">
+            <children>
+                <GridPane fx:id="graveyard" gridLinesVisible="true" layoutX="4.0" prefHeight="99.0" prefWidth="752.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <StackPane fx:id="125" prefHeight="150.0" prefWidth="200.0" />
+                        <StackPane fx:id="124" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                        <StackPane fx:id="123" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" />
+                        <StackPane fx:id="122" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" />
+                        <StackPane fx:id="121" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" />
+                        <StackPane fx:id="120" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" />
+                        <StackPane fx:id="119" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" />
+                        <StackPane fx:id="118" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" />
+                        <StackPane fx:id="117" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="8" />
+                        <StackPane fx:id="116" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="9" />
+                        <StackPane fx:id="115" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="10" />
+                        <StackPane fx:id="114" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="11" />
+                        <StackPane fx:id="113" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="12" />
+                        <StackPane fx:id="112" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="13" />
+                        <StackPane fx:id="111" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="14" />
+                        <StackPane fx:id="110" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="15" />
+                        <StackPane fx:id="025" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="1" />
+                        <StackPane fx:id="024" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+                        <StackPane fx:id="023" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+                        <StackPane fx:id="022" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+                        <StackPane fx:id="021" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+                        <StackPane fx:id="020" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                        <StackPane fx:id="019" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                        <StackPane fx:id="018" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <StackPane fx:id="017" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <StackPane fx:id="016" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <StackPane fx:id="015" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <StackPane fx:id="014" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <StackPane fx:id="013" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <StackPane fx:id="012" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <StackPane fx:id="011" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <StackPane fx:id="010" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <Pane prefHeight="100.0" prefWidth="760.0" style="-fx-border-style: solid; -fx-border-color: #779656#779656 #779656; -fx-border-radius: 10; -fx-border-width: 5;">
+                    <children>
+                        <Line endX="753.4207153320312" endY="50.0" startX="6.0" startY="50.0" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="46.0" layoutY="-2.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="93.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="141.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="188.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="235.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="282.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="328.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="375.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="423.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="470.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="516.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="563.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="611.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                        <Line endX="51.69122314453125" endY="100.0" layoutX="658.0" layoutY="-3.0" startX="51.69122314453125" startY="6.25592041015625" stroke="#779656" strokeWidth="2.0" />
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane layoutX="880.0" layoutY="69.0" prefHeight="550.0" prefWidth="250.0" style="-fx-background-color: #262522;">
+            <children>
+                <Label fx:id="lastMovesText" layoutX="52.0" layoutY="29.0" text="Last moves:" textFill="#b3b3b2">
+                    <font>
+                        <Font name="Arial" size="27.0" />
+                    </font>
+                </Label>
+                <ListView id="historyList" fx:id="historyList" layoutX="13.0" layoutY="82.0" prefHeight="400.0" prefWidth="225.0" style="-fx-background-color: #262521;" styleClass="list-cell" stylesheets="@CSS-Stylesheet-GameScreen.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="checkPaneWhite" layoutX="880.0" layoutY="6.0" prefHeight="65.0" prefWidth="128.0" visible="false">
+            <children>
+                <Text fx:id="whiteIsChecked" fill="#779656" strokeType="OUTSIDE" strokeWidth="0.0" text="WHITE IS CHECKED" y="40.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="checkPaneBlack" layoutX="880.0" layoutY="6.0" prefHeight="65.0" prefWidth="128.0" visible="false">
+            <children>
+                <Text fx:id="blackIsChecked" fill="#779656" strokeType="OUTSIDE" strokeWidth="0.0" text="BLACK IS CHECKED" y="40.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="whiteWinsPane" layoutX="880.0" layoutY="6.0" prefHeight="65.0" prefWidth="128.0" visible="false">
+            <children>
+                <Text fx:id="whiteWins" fill="#779656" strokeType="OUTSIDE" strokeWidth="0.0" text="WHITE WINS" y="40.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="blackWinsPane" layoutX="880.0" layoutY="6.0" prefHeight="65.0" prefWidth="128.0" visible="false">
+            <children>
+                <Text fx:id="blackWins" fill="#779656" strokeType="OUTSIDE" strokeWidth="0.0" text="BLACK WINS" y="40.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="staleMatePane" layoutX="880.0" layoutY="6.0" prefHeight="65.0" prefWidth="128.0" visible="false">
+            <children>
+                <Text fx:id="stalemate" fill="#779656" strokeType="OUTSIDE" strokeWidth="0.0" text="STALEMATE" y="40.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+      <Pane fx:id="gameOverPane" layoutX="250.0" layoutY="50.0" prefHeight="600.0" prefWidth="600.0" visible="false" />
+    </children>
+</Pane>

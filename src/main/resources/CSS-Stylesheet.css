@@ -1,0 +1,53 @@
+#startGameButton{
+    -fx-background-color: #7fa650;
+    -fx-text-fill: #fff;
+}
+#startGameButton:hover{
+    -fx-background-color: #95bb49;
+}
+#startGameButton:pressed{
+    -fx-background-color: #82A542;
+}
+#toggleButtons{
+    -fx-background-color: #272522;
+    -fx-text-fill: #bbbab9;
+}
+#toggleButtons:hover{
+    -fx-background-color: #1b1918;
+}
+#toggleButtons:selected{
+    -fx-background-color: #1b1918;
+}
+#menuBar{
+    -fx-background-color: #272522;
+    -fx-text-fill: white;
+
+}
+.menu{
+    -fx-background-color: #272522;
+}
+.menu .label{
+    -fx-text-fill: #bbbab9;
+    -fx-font-size: 1.25em;
+    -fx-alignment: center;
+    -fx-padding: 0.333333em 2em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+#menuButton:hover{
+    -fx-background-color: #1b1918;
+}
+.context-menu {
+    -fx-background-color: #272522;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 0 6 6, 0 0 5 5, 0 0 4 4;
+    -fx-padding: 0.333333em 0.083333em 0.366667em 0.083333em; /* 4 1 8 1 */
+}
+#menuItem{
+    -fx-background-color: #272522;
+}
+#menuItem:hover {
+    -fx-background-color: #1b1918;
+}
+.slider .axis {
+    -fx-tick-label-font-size: 1.5em;
+    -fx-tick-label-fill: #b3b3b2;
+}
